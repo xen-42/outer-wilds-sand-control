@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/config_schema.json",
+  "enabled": true,
+  "settings": {
+    "sandPercentage": {
+      "title": "Sand level percentage",
+      "type": "number",
+      "value": 50.0,
+      "tooltip": "Value from 0-100 representing how much sand is on Ember Twin. Ash Twin will have the opposite value, e.g., if Ember Twin is at 30% Ash Twin will be at 70%. You can also press +/- on the numpad to change this value in game."
+    },
+    "sandFunnelActive": {
+      "title": "Sand funnel enabled",
+      "type": "toggle",
+      "value": false,
+      "tooltip": "Turns the sand funnel off and on. Alternatively press 0 on your keyboard to toggle in game."
+    }
+  }
+}

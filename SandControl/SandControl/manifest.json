@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/manifest_schema.json",
+  "filename": "SandControl.dll",
+  "author": "xen-42",
+  "name": "SandControl",
+  "uniqueName": "xen-42.SandControl",
+  "version": "0.1.0",
+  "owmlVersion": "2.13.0",
+  "dependencies": []
+}

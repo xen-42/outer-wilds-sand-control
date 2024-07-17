@@ -1,5 +1,6 @@
 # Sand Control
-Manually set the sand levels on the twins
+
+Gives the player control over the sand on Ash and Ember Twin.
 
 ### Sand level
 You can set the sand level of the twins either in the mod options (value from 0-100) or using Numpad +/-

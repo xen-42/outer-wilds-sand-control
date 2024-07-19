@@ -30,7 +30,7 @@ public class SandControl : ModBehaviour
 
         var towerTwinOriginalCurve = Locator.GetAstroObject(AstroObject.Name.TowerTwin).GetComponentInChildren<SandLevelController>(true)._scaleCurve;
         _towerTwinInverseCurve = new AnimationCurve();
-        for (int i = 0; i < towerTwinOriginalCurve.length; i++)
+        for (int i = 1; i < towerTwinOriginalCurve.length - 1; i++)
         {
             _towerTwinInverseCurve.AddKey(towerTwinOriginalCurve.keys[i].value, towerTwinOriginalCurve.keys[i].time);
         }
@@ -104,9 +104,12 @@ public class SandControl : ModBehaviour
                 _towerTwinSand._scaleCurve = new AnimationCurve(new Keyframe(0, ttSand));
                 _caveTwinSand._scaleCurve = new AnimationCurve(new Keyframe(0, ctSand));
 
-                var stockTiming = _towerTwinInverseCurve.Evaluate(ttSand) * 60f;
+                var rawTime = _towerTwinInverseCurve.Evaluate(ttSand);
+                var minutes = Mathf.FloorToInt(rawTime);
+                var seconds = Mathf.FloorToInt(rawTime * 60f) - (minutes * 60);
+                var timeString = minutes.ToString() + ":" + seconds.ToString("00");
 
-                ModHelper.Console.WriteLine($"At {_sandPercentage * 100f}% the Ash Twin sand is at {ttSand}m and the Ember Twin sand is at {ctSand}m. This level would occur at {stockTiming}s into the loop.", MessageType.Info);
+                ModHelper.Console.WriteLine($"At {_sandPercentage * 100f}% the Ash Twin sand is at {ttSand}m and the Ember Twin sand is at {ctSand}m. This level would occur at {timeString} into the loop.", MessageType.Info);
             }
             catch (Exception e)
             {
